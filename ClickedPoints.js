@@ -44,7 +44,7 @@ function main() {
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
   // Clear <canvas>
-  gl.clear(gl.COLOR_BUFFER_BIT);
+  //gl.clear(gl.COLOR_BUFFER_BIT);
 }
 
 var g_points = []; // The array for the position of a mouse press
@@ -56,7 +56,7 @@ function click(ev, gl, canvas, a_Position) {
   x = ((x - rect.left) - canvas.width/2)/(canvas.width/2);
   y = (canvas.height/2 - (y - rect.top))/(canvas.height/2);
   // Store the coordinates to g_points array
-  g_points.push(x); g_points.push(y);
+  g_points.push([x, y]);
 
   // Clear <canvas>
   gl.clear(gl.COLOR_BUFFER_BIT);
@@ -64,6 +64,7 @@ function click(ev, gl, canvas, a_Position) {
   var len = g_points.length;
   for(var i = 0; i < len; i += 2) {
     // Pass the position of a point to a_Position variable
+   var xy = g_points[i];
     gl.vertexAttrib3f(a_Position, g_points[i], g_points[i+1], 0.0);
 
     // Draw
