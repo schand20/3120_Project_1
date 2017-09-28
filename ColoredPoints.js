@@ -80,6 +80,7 @@ function click(ev, gl, canvas, a_Position, u_FragColor) {
   // Clear <canvas>
   gl.clear(gl.COLOR_BUFFER_BIT);
 
+
   var len = g_points.length;
   for(var i = 0; i < len; i++) {
     var xy = g_points[i];
