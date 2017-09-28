@@ -44,6 +44,10 @@ function main() {
 
   // Draw the rectangle
   gl.drawArrays(gl.TRIANGLES, 0, n);
+  gl.drawArrays(gl.TRIANGLES, 0, n);
+  gl.drawArrays(gl.TRIANGLES_FAN, 0, n);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, n);
+  gl.drawArrays(gl.LINE_STRIP, 0, n);
 }
 
 function initVertexBuffers(gl) {
